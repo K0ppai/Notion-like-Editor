@@ -2,7 +2,6 @@ const outputContainer = document.getElementById('outputContainer');
 const options = document.getElementById('options');
 const textInput = document.getElementById('textInput');
 const popUp = document.getElementById('popUp');
-const keyword = document.getElementById('keyword');
 const createHeaderBtn = document.getElementById('createHeaderBtn');
 const createExpandableBtn = document.getElementById('createExpandableBtn');
 

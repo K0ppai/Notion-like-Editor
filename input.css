@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-[contenteditable]:empty:before {
+[contenteditable]:empty::before {
   content: attr(data-placeholder);
   color: #6c727f;
 }
@@ -10,6 +10,7 @@
 .hamburgerBtn .options {
   display: none;
 }
+
 .hamburgerBtn:hover .options {
   display: flex;
 }
