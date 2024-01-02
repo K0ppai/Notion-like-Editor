@@ -6,7 +6,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="/output.css" />
   </head>
-  <body>
+  <body class="overflow-x-hidden mb-8">
     <nav class="py-5 px-3 flex justify-between w-screen">
       <div class="flex items-center">
         <svg
@@ -114,9 +114,9 @@
         <h1 class="font-bold text-4xl border-b border-gray py-4">
           Front-end developer test project
         </h1>
-        <p>Type / then 1 to create a header.</p>
+        <p class="my-4">Type / then 1 to create a header.</p>
         <!-- headers created here -->
-        <div id="outputContainer"></div>
+        <div id="outputContainer" class="mb-4"></div>
 
         <input
           type="text"
@@ -126,7 +126,8 @@
           autocomplete="off"
         />
 
-        <div id="popUp" class="py-4 border border-gray w-[300px] rounded-md hidden">
+        <!-- pop up -->
+        <div id="popUp" class="py-4 border border-gray w-[300px] rounded-md hidden shadow-lg">
           <div class="px-3">
             <h2 class="font-bold text-xl">Add blocks</h2>
             <p class="text-grey">Keep typing to filter, or escape to exit</p>
@@ -138,6 +139,7 @@
             <button
               id="createHeaderBtn"
               class="hover:bg-hover_gray w-full py-2 transition-all duration-250 ease-linear"
+              data-heading="h1"
             >
               <div class="flex items-center">
                 <figure class="px-4">
@@ -160,8 +162,9 @@
               </div>
             </button>
             <button
-              id="createBtn"
+              id="createExpandableBtn"
               class="hover:bg-hover_gray w-full py-2 transition-all duration-250 ease-linear"
+              data-heading="details"
             >
               <div class="flex items-center">
                 <figure class="px-4">
@@ -187,6 +190,36 @@
         </div>
       </section>
     </main>
+
+    <!-- template -->
+    <template id="template">
+      <div class="flex">
+        <a class="hamburgerBtn relative cursor-pointer">
+          <div
+            class="options absolute bottom-1 right-[100%] w-[90px] border border-grey p-1 px-2 rounded shadow-lg"
+          >
+            <button class="deleteBtn flex items-center space-x-2 w-full">
+              <span> Delete </span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+                <path
+                  fill="#a3a8b3"
+                  d="M7 21q-.825 0-1.412-.587T5 19V6q-.425 0-.712-.288T4 5q0-.425.288-.712T5 4h4q0-.425.288-.712T10 3h4q.425 0 .713.288T15 4h4q.425 0 .713.288T20 5q0 .425-.288.713T19 6v13q0 .825-.587 1.413T17 21zM17 6H7v13h10zm-7 11q.425 0 .713-.288T11 16V9q0-.425-.288-.712T10 8q-.425 0-.712.288T9 9v7q0 .425.288.713T10 17m4 0q.425 0 .713-.288T15 16V9q0-.425-.288-.712T14 8q-.425 0-.712.288T13 9v7q0 .425.288.713T14 17M7 6v13z"
+                />
+              </svg>
+            </button>
+          </div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 15 15">
+            <path
+              fill="#a3a8b3"
+              fill-rule="evenodd"
+              d="M1.5 3a.5.5 0 0 0 0 1h12a.5.5 0 0 0 0-1zM1 7.5a.5.5 0 0 1 .5-.5h12a.5.5 0 0 1 0 1h-12a.5.5 0 0 1-.5-.5m0 4a.5.5 0 0 1 .5-.5h12a.5.5 0 0 1 0 1h-12a.5.5 0 0 1-.5-.5"
+              clip-rule="evenodd"
+            />
+          </svg>
+        </a>
+      </div>
+    </template>
+
     <script src="index.js"></script>
   </body>
 </html>
