@@ -59,6 +59,72 @@
         </div>
       </div>
     </nav>
-    
+    <main class="flex flex-col items-center">
+      <header
+        class="flex p-2 border-2 border-light_gray rounded-md w-[70%] items-center justify-between mt-4"
+      >
+        <div class="flex items-center text-gray">
+          <span class="px-[8px] py-1 text-dark_green bg-light_green rounded-md font-bold mr-4">
+            P
+          </span>
+          <div class="w-[1.5px] h-[15px] bg-light_gray"></div>
+          <div class="flex items-center space-x-1 mx-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+              <path
+                fill="#aaafb9"
+                d="M12 21q-1.663 0-3.118-.626q-1.455-.626-2.543-1.713q-1.087-1.088-1.713-2.543Q4 14.663 4 13q0-1.663.626-3.118q.626-1.455 1.713-2.543q1.088-1.087 2.543-1.713Q10.337 5 12 5q1.663 0 3.118.626q1.455.626 2.543 1.713q1.087 1.088 1.713 2.543Q20 11.337 20 13q0 1.663-.626 3.118q-.626 1.455-1.713 2.543q-1.088 1.087-2.543 1.713Q13.663 21 12 21m3.146-4.146l.708-.708l-3.354-3.354V8h-1v5.208zM5.908 3.427l.707.708l-3.48 3.48l-.708-.707zm12.184 0l3.481 3.48l-.708.708l-3.48-3.48zM12 20q2.906 0 4.953-2.047T19 13q0-2.906-2.047-4.953T12 6Q9.094 6 7.047 8.047T5 13q0 2.906 2.047 4.953T12 20"
+              />
+            </svg>
+            <span>0min</span>
+          </div>
+          <div class="w-[1.5px] h-[15px] bg-light_gray"></div>
+          <figure class="w-7 mx-4">
+            <img src="./assets/images/rabbit.png" alt="rabbit" />
+          </figure>
+          <div class="w-[1.5px] h-[15px] bg-light_gray"></div>
+          <div class="flex items-center pr-3 space-x-1 ml-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+              <path fill="#aaafb9" d="M19 6.41L17.59 5L7 15.59V9H5v10h10v-2H8.41z" />
+            </svg>
+            <span>0</span>
+          </div>
+        </div>
+        <div class="flex items-center space-x-3">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+            <path
+              fill="#aaafb9"
+              d="M20 12a8 8 0 0 1-8 8a8 8 0 0 1-8-8a8 8 0 0 1 8-8c.76 0 1.5.11 2.2.31l1.57-1.57A9.822 9.822 0 0 0 12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10a10 10 0 0 0 10-10M7.91 10.08L6.5 11.5L11 16L21 6l-1.41-1.42L11 13.17z"
+            />
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+            <path
+              fill="#499771"
+              d="M9.5 6a6.5 6.5 0 0 0 0 13h7a4.5 4.5 0 1 0-.957-8.898A6.502 6.502 0 0 0 9.5 6m7 15h-7a8.5 8.5 0 1 1 7.215-12.997A6.5 6.5 0 0 1 16.5 21"
+            />
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+            <path
+              fill="#000000"
+              d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2s-2 .9-2 2s.9 2 2 2m0 2c-1.1 0-2 .9-2 2s.9 2 2 2s2-.9 2-2s-.9-2-2-2m0 6c-1.1 0-2 .9-2 2s.9 2 2 2s2-.9 2-2s-.9-2-2-2"
+            />
+          </svg>
+        </div>
+      </header>
+      <section class="w-[70%]">
+        <h1 class="font-bold text-4xl border-b border-gray py-4">
+          Front-end developer test project
+        </h1>
+        <p>Type / then 1 to create a header.</p>
+        <div id="outputContainer"></div>
+        <input
+        type="text"
+        id="textInput"
+        class="w-full"
+        placeholder='Type / for blocks, @ to link docs or people'
+      />
+      </section>
+    </main>
+
+    <script src="index.js"></script>
   </body>
 </html>
