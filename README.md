@@ -1,5 +1,9 @@
 <a name="readme-top"></a>
 
+<div align="center">
+  <h1><b>Notion-Like-Editor</b></h1>
+  <img src="./assets/images/Notion_like_Editor.png" />
+</div>
 
 # 📗 Table of Contents
 
