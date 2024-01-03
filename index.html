@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notion-like Editor</title>
+    <link rel="stylesheet" href="/output.css" />
+    <link rel="icon" href="./assets/images/rabbit.png" type="image">
+  </head>
+  <body class="overflow-x-hidden mb-8">
+    <nav class="py-5 px-3 flex justify-between w-screen">
+      <div class="flex items-center">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="25"
+          height="25"
+          viewBox="0 0 24 24"
+          class="mr-4"
+        >
+          <path fill="#6c727f" d="M6.41 6L5 7.41L9.58 12L5 16.59L6.41 18l6-6z" />
+          <path fill="#6c727f" d="m13 6l-1.41 1.41L16.17 12l-4.58 4.59L13 18l6-6z" />
+        </svg>
+        <div class="space-x-3 text-grey flex items-center">
+          <div class="flex space-x-2 items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 256 256">
+              <path
+                fill="#a3a8b3"
+                d="M224 50h-64a38 38 0 0 0-32 17.55A38 38 0 0 0 96 50H32a14 14 0 0 0-14 14v128a14 14 0 0 0 14 14h64a26 26 0 0 1 26 26a6 6 0 0 0 12 0a26 26 0 0 1 26-26h64a14 14 0 0 0 14-14V64a14 14 0 0 0-14-14M96 194H32a2 2 0 0 1-2-2V64a2 2 0 0 1 2-2h64a26 26 0 0 1 26 26v116.31A37.86 37.86 0 0 0 96 194m130-2a2 2 0 0 1-2 2h-64a37.87 37.87 0 0 0-26 10.32V88a26 26 0 0 1 26-26h64a2 2 0 0 1 2 2Z"
+              />
+            </svg>
+            <span class="text-grey underline">Main</span>
+          </div>
+          <span>/</span>
+          <span>Getting started</span>
+          <span>/</span>
+          <span>Front-end developer test project</span>
+        </div>
+      </div>
+
+      <div class="flex w-[25%] justify-end">
+        <div class="flex items-center space-x-2 border-r border-gray pr-5">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+            <path
+              fill="#a3a8b3"
+              fill-rule="evenodd"
+              d="M19 7h-2a4 4 0 0 0-8 0v3h9a3 3 0 0 1 3 3v6a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3v-6a3 3 0 0 1 3-3h1V7a6 6 0 1 1 12 0m-1 5H6a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-6a1 1 0 0 0-1-1"
+              clip-rule="evenodd"
+            />
+          </svg>
+          <span class="text-grey">Editing</span>
+        </div>
+        <div class="flex items-center space-x-2 pl-5">
+          <span class="text-blue font-bold">Publish Space</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+            <path
+              fill="#3565a9"
+              d="M12 14.975q-.2 0-.375-.062T11.3 14.7l-4.6-4.6q-.275-.275-.275-.7t.275-.7q.275-.275.7-.275t.7.275l3.9 3.9l3.9-3.9q.275-.275.7-.275t.7.275q.275.275.275.7t-.275.7l-4.6 4.6q-.15.15-.325.213t-.375.062"
+            />
+          </svg>
+        </div>
+      </div>
+    </nav>
+    <main class="flex flex-col items-center">
+      <header
+        class="flex p-2 border-2 border-light_gray rounded-md w-[70%] items-center justify-between mt-4"
+      >
+        <div class="flex items-center text-grey">
+          <span class="px-[8px] py-1 text-dark_green bg-light_green rounded-md font-bold mr-3">
+            P
+          </span>
+          <div class="w-[1.5px] h-[15px] bg-light_gray"></div>
+          <div class="flex items-center space-x-1 mx-3">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+              <path
+                fill="#aaafb9"
+                d="M12 21q-1.663 0-3.118-.626q-1.455-.626-2.543-1.713q-1.087-1.088-1.713-2.543Q4 14.663 4 13q0-1.663.626-3.118q.626-1.455 1.713-2.543q1.088-1.087 2.543-1.713Q10.337 5 12 5q1.663 0 3.118.626q1.455.626 2.543 1.713q1.087 1.088 1.713 2.543Q20 11.337 20 13q0 1.663-.626 3.118q-.626 1.455-1.713 2.543q-1.088 1.087-2.543 1.713Q13.663 21 12 21m3.146-4.146l.708-.708l-3.354-3.354V8h-1v5.208zM5.908 3.427l.707.708l-3.48 3.48l-.708-.707zm12.184 0l3.481 3.48l-.708.708l-3.48-3.48zM12 20q2.906 0 4.953-2.047T19 13q0-2.906-2.047-4.953T12 6Q9.094 6 7.047 8.047T5 13q0 2.906 2.047 4.953T12 20"
+              />
+            </svg>
+            <span>0min</span>
+          </div>
+          <div class="w-[1.5px] h-[15px] bg-light_gray"></div>
+          <figure class="w-7 mx-3">
+            <img src="./assets/images/rabbit.png" alt="rabbit" />
+          </figure>
+          <div class="w-[1.5px] h-[15px] bg-light_gray"></div>
+          <div class="flex items-center pr-3 space-x-1 ml-3">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+              <path fill="#aaafb9" d="M19 6.41L17.59 5L7 15.59V9H5v10h10v-2H8.41z" />
+            </svg>
+            <span>0</span>
+          </div>
+        </div>
+        <div class="flex items-center space-x-3">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+            <path
+              fill="#aaafb9"
+              d="M20 12a8 8 0 0 1-8 8a8 8 0 0 1-8-8a8 8 0 0 1 8-8c.76 0 1.5.11 2.2.31l1.57-1.57A9.822 9.822 0 0 0 12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10a10 10 0 0 0 10-10M7.91 10.08L6.5 11.5L11 16L21 6l-1.41-1.42L11 13.17z"
+            />
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+            <path
+              fill="#499771"
+              d="M9.5 6a6.5 6.5 0 0 0 0 13h7a4.5 4.5 0 1 0-.957-8.898A6.502 6.502 0 0 0 9.5 6m7 15h-7a8.5 8.5 0 1 1 7.215-12.997A6.5 6.5 0 0 1 16.5 21"
+            />
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+            <path
+              fill="#000000"
+              d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2s-2 .9-2 2s.9 2 2 2m0 2c-1.1 0-2 .9-2 2s.9 2 2 2s2-.9 2-2s-.9-2-2-2m0 6c-1.1 0-2 .9-2 2s.9 2 2 2s2-.9 2-2s-.9-2-2-2"
+            />
+          </svg>
+        </div>
+      </header>
+      <section class="w-[70%]">
+        <h1 class="font-bold text-4xl border-b border-gray py-4">
+          Front-end developer test project
+        </h1>
+        <p class="my-4">Type / then 1 to create a header.</p>
+        <!-- headers created here -->
+        <div id="outputContainer" class="mb-4"></div>
+
+        <input
+          type="text"
+          id="textInput"
+          class="w-full outline-none"
+          placeholder="Type / for blocks, @ to link docs or people"
+          autocomplete="off"
+        />
+
+        <!-- pop up -->
+        <div id="popUp" class="py-4 border border-gray w-[300px] rounded-md hidden shadow-lg">
+          <div class="px-3">
+            <h2 class="font-bold text-xl">Add blocks</h2>
+            <p class="text-grey">Keep typing to filter, or escape to exit</p>
+            <p class="text-gray-500 py-4">
+              Filtering keyword <span id="keyword" class="bg-blue p-1 text-white rounded">1</span>
+            </p>
+          </div>
+          <div id="options" class="hidden">
+            <button
+              id="createHeaderBtn"
+              class="hover:bg-hover_gray w-full py-2 transition-all duration-250 ease-linear"
+              data-heading="h1"
+              type="button"
+            >
+              <div class="flex items-center">
+                <figure class="px-4">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="32"
+                    height="32"
+                    viewBox="0 0 256 256"
+                  >
+                    <path
+                      fill="#a3a8b3"
+                      d="M212 56v32a12 12 0 0 1-24 0V68h-48v120h20a12 12 0 0 1 0 24H96a12 12 0 0 1 0-24h20V68H68v20a12 12 0 0 1-24 0V56a12 12 0 0 1 12-12h144a12 12 0 0 1 12 12"
+                    />
+                  </svg>
+                </figure>
+                <div>
+                  <h3 class="font-bold text-left">Heading 1</h3>
+                  <p class="text-grey">Shortcut: type # + space</p>
+                </div>
+              </div>
+            </button>
+            <button
+              id="createExpandableBtn"
+              class="hover:bg-hover_gray w-full py-2 transition-all duration-250 ease-linear"
+              data-heading="details"
+              type="button"
+            >
+              <div class="flex items-center">
+                <figure class="px-4">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="32"
+                    height="32"
+                    viewBox="0 0 256 256"
+                  >
+                    <path
+                      fill="#a3a8b3"
+                      d="M212 56v32a12 12 0 0 1-24 0V68h-48v120h20a12 12 0 0 1 0 24H96a12 12 0 0 1 0-24h20V68H68v20a12 12 0 0 1-24 0V56a12 12 0 0 1 12-12h144a12 12 0 0 1 12 12"
+                    />
+                  </svg>
+                </figure>
+                <div>
+                  <h3 class="font-bold text-left">Expandable Heading 1</h3>
+                  <p class="text-grey">Shortcut: type >># + space</p>
+                </div>
+              </div>
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- template -->
+    <template id="template">
+      <div class="flex">
+        <a class="hamburgerBtn relative cursor-pointer">
+          <div
+            class="options absolute bottom-1 right-[100%] w-[90px] border border-grey p-1 px-2 rounded shadow-lg"
+          >
+            <button class="deleteBtn flex items-center space-x-2 w-full">
+              <span> Delete </span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+                <path
+                  fill="#a3a8b3"
+                  d="M7 21q-.825 0-1.412-.587T5 19V6q-.425 0-.712-.288T4 5q0-.425.288-.712T5 4h4q0-.425.288-.712T10 3h4q.425 0 .713.288T15 4h4q.425 0 .713.288T20 5q0 .425-.288.713T19 6v13q0 .825-.587 1.413T17 21zM17 6H7v13h10zm-7 11q.425 0 .713-.288T11 16V9q0-.425-.288-.712T10 8q-.425 0-.712.288T9 9v7q0 .425.288.713T10 17m4 0q.425 0 .713-.288T15 16V9q0-.425-.288-.712T14 8q-.425 0-.712.288T13 9v7q0 .425.288.713T14 17M7 6v13z"
+                />
+              </svg>
+            </button>
+          </div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 15 15">
+            <path
+              fill="#a3a8b3"
+              fill-rule="evenodd"
+              d="M1.5 3a.5.5 0 0 0 0 1h12a.5.5 0 0 0 0-1zM1 7.5a.5.5 0 0 1 .5-.5h12a.5.5 0 0 1 0 1h-12a.5.5 0 0 1-.5-.5m0 4a.5.5 0 0 1 .5-.5h12a.5.5 0 0 1 0 1h-12a.5.5 0 0 1-.5-.5"
+              clip-rule="evenodd"
+            />
+          </svg>
+        </a>
+      </div>
+    </template>
+
+    <script src="index.js"></script>
+  </body>
+</html>
